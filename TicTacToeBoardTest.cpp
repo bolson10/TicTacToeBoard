@@ -88,5 +88,6 @@ TEST(TicTacToeBoardTest, if_placePiece_detects_board_is_filled)
 	board.placePiece(1,2);
 	board.placePiece(2,0);
 	board.placePiece(2,1);
-	ASSERT_EQ(board.placePiece(2,2),Blank);
+	board.placePiece(2,2);
+	ASSERT_EQ(board.placePiece(0,0),Blank);
 }
