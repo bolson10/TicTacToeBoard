@@ -76,11 +76,11 @@ Piece TicTacToeBoard::getWinner()
   	for(int j=0; j < BOARDSIZE; j++)
   	{
   		Piece pc = board[i][j];
-  		bool three = TRUE;
+  		bool three = true;
   		for(int k=j; k < BOARDSIZE; k++)
   		{
   			if(board[i][k] != pc)
-  				three = FALSE;
+  				three = false;
   		}
   		if(three)
   			return pc;
