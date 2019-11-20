@@ -11,6 +11,7 @@ TicTacToeBoard::TicTacToeBoard()
   for(int i=0; i<BOARDSIZE; i++)
     for(int j=0; j<BOARDSIZE; j++)
       board[i][j] = Blank;
+  legal_turn_count = 0;
 }
 
 /**
@@ -37,11 +38,16 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
+  if(turn_count == BOARDSIZE*BOARDSIZE)
+  	return Blank;
   Piece cur_piece = turn;
-  if(row < 0 || row >  BOARDSIZE || column < 0 || column > BOARDSIZE)
+  if(row < 0 || row >  (BOARDSIZE-1) || column < 0 || column > (BOARDSIZE-1))
   	cur_piece = Invalid;
   else if(board[row][column] == Blank)
+  {
+  	legal_turn_count += 1;
   	board[row][column] = cur_piece;
+  }
   else if(board[row][column] == X || board[row][column] == O)
   	cur_piece = board[row][column];
   turn = toggleTurn();
