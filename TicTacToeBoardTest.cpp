@@ -20,3 +20,10 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoardTest, check_if_turns_change_properly)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.toggleTurn(),O);
+
+}
