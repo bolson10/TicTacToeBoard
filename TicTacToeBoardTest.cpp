@@ -24,6 +24,5 @@ TEST(TicTacToeBoardTest, unitTestName)
 TEST(TicTacToeBoardTest, check_if_turns_change_properly)
 {
 	TicTacToeBoard board;
-	ASSERT_EQ(board.toggleTurn(),O);
-
+	ASSERT_EQ(board.toggleTurn(),X);
 }
