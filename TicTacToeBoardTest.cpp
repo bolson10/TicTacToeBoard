@@ -21,9 +21,30 @@ TEST(TicTacToeBoardTest, unitTestName)
 }
 */
 
-TEST(TicTacToeBoardTest, check_if_turns_change_properly)
+TEST(TicTacToeBoardTest, if_toggleTurn_changes_X_to_O)
 {
 	TicTacToeBoard board;
+	ASSERT_EQ(board.toggleTurn(),O);
+}
+
+TEST(TicTacToeBoardTest, if_toggleTurn_changes_O_to_X)
+{
+	TicTacToeBoard board;
+	board.toggleTurn();
+	ASSERT_EQ(board.toggleTurn(),X);
+}
+
+TEST(TicTacToeBoardTest, if_toggleTurn_handles_many_turn_switches)
+{
+	TicTacToeBoard board;
+	board.toggleTurn();
+	board.toggleTurn();
+	board.toggleTurn();
+	board.toggleTurn();
+	board.toggleTurn();
+	board.toggleTurn();
+	board.toggleTurn();
+	board.toggleTurn();
 	board.toggleTurn();
 	board.toggleTurn();
 	board.toggleTurn();
