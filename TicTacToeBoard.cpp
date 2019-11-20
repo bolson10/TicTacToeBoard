@@ -71,20 +71,36 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
+  if(legal_turn_count != 9)
+  	return Invalid;
   for(int i=0; i < BOARDSIZE; i++)
   {
   	for(int j=0; j < BOARDSIZE; j++)
   	{
   		Piece pc = board[i][j];
-  		bool three = true;
+  		if(j==0)
+  		{
+  		bool threeHorizontal = true;
   		for(int k=j; k < BOARDSIZE; k++)
   		{
   			if(board[i][k] != pc)
-  				three = false;
+  				threeHorizontal = false;
   		}
-  		if(three)
+  		if(threeHorizontal)
   			return pc;
+  	    }
+  	    if(i==0)
+  	    {	
+  		for(int k=i; k < BOARDSIZE; k++)
+  		{
+  			bool threeVertical = true;
+  			if(board[k][j] != pc)
+  				threeVertical = false;
+  		}
+  		if(threeVertical)
+  			return pc;  	
+  	    }
   	}
   }
-  return Invalid;
+  return Blank;
 }
