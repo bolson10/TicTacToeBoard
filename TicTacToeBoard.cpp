@@ -90,10 +90,10 @@ Piece TicTacToeBoard::getWinner()
   			return pc;
   	    }
   	    if(i==0)
-  	    {	
+  	    {
+  	    bool threeVertical = true;	
   		for(int k=i; k < BOARDSIZE; k++)
   		{
-  			bool threeVertical = true;
   			if(board[k][j] != pc)
   				threeVertical = false;
   		}
