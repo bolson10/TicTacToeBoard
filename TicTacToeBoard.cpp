@@ -38,7 +38,7 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  if(turn_count == BOARDSIZE*BOARDSIZE)
+  if(legal_turn_count == BOARDSIZE*BOARDSIZE)
   	return Blank;
   Piece cur_piece = turn;
   if(row < 0 || row >  (BOARDSIZE-1) || column < 0 || column > (BOARDSIZE-1))
