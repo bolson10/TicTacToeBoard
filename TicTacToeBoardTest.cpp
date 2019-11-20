@@ -63,3 +63,16 @@ TEST(TicTacToeBoardTest, if_placePiece_inserts_piece_on_empty_space_after_toggle
 	board.placePiece(0,0);
 	ASSERT_EQ(board.placePiece(0,1),O);
 }
+
+TEST(TicTacToeBoardTest, if_placePiece_detects_piece_already_at_position)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,2);
+	ASSERT_EQ(board.placePiece(0,2),X);
+}
+
+TEST(TicTacToeBoardTest, if_placePiece_detects_position_out_of_bounds)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.placePiece(5,-2),Invalid);
+}

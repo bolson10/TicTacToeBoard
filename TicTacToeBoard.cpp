@@ -38,8 +38,12 @@ Piece TicTacToeBoard::toggleTurn()
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
   Piece cur_piece = turn;
-  if(board[row][column] == Blank)
+  if(row < 0 || row >  BOARDSIZE || column < 0 || column > BOARDSIZE)
+  	cur_piece = Invalid;
+  else if(board[row][column] == Blank)
   	board[row][column] = cur_piece;
+  else if(board[row][column] == X || board[row][column] == O)
+  	cur_piece = board[row][column];
   turn = toggleTurn();
   return cur_piece;
 }
