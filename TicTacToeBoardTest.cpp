@@ -91,3 +91,25 @@ TEST(TicTacToeBoardTest, if_placePiece_detects_board_is_filled)
 	board.placePiece(2,2);
 	ASSERT_EQ(board.placePiece(0,0),Blank);
 }
+
+TEST(TicTacToeBoardTest, if_getPiece_detects_out_of_bounds)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(3,3),Invalid);
+}
+
+TEST(TicTacToeBoardTest, if_getPiece_detects_blank_space)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(0,0),Blank);
+}
+
+TEST(TicTacToeBoardTest, if_getPiece_detects_pieces_on_board)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,1);
+	board.placePiece(2,2);
+	ASSERT_EQ(board.getPiece(2,2),O);
+}
+
+
