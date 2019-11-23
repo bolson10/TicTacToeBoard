@@ -212,7 +212,7 @@ TEST(TicTacToeBoardTest, if_getWinner_checks_diagonal_win_X)
 	ASSERT_EQ(board.getWinner(),X);
 }
 
-TEST(TicTacToeBoardTest, if_getWinner_checks_diagonal_win_X)
+TEST(TicTacToeBoardTest, if_getWinner_checks_diagonal_win_2_X)
 {
 	TicTacToeBoard board;
 	board.placePiece(0,2);
