@@ -114,15 +114,15 @@ Piece TicTacToeBoard::getWinner()
   	    } 
   	    if(i==0 && j==2) 
   	    {
-  	    	bool threeDiagonal = true;
+  	    	bool threeDiagonal2 = true;
   	    	int l = i;
-  	    	for(int k=j; j > 0; j--)
+  	    	for(int k=j; k > 0; k--)
   	    	{
   	    		if(board[l+1][k-1] != pc)
-  	    			threeDiagonal = false;
+  	    			threeDiagonal2 = false;
   	    		l += 1;
   	    	}
-  	    if(threeDiagonal)
+  	    if(threeDiagonal2)
   	    	return pc;
   	    }
   	}
