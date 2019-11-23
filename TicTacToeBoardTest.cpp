@@ -113,7 +113,7 @@ TEST(TicTacToeBoardTest, if_getPiece_detects_pieces_on_board)
 }
 
 
-TEST(TicTacToeBoardTest, if_getWinner_checks_horizontal_win_O)
+TEST(TicTacToeBoardTest, if_getWinner_checks_horizontal_win_X)
 {
 	TicTacToeBoard board;
 	board.placePiece(0,0);
@@ -125,7 +125,7 @@ TEST(TicTacToeBoardTest, if_getWinner_checks_horizontal_win_O)
 	board.placePiece(1,1);
 	board.placePiece(2,0);
 	board.placePiece(2,2);
-	ASSERT_EQ(board.getWinner(),O);
+	ASSERT_EQ(board.getWinner(),X);
 }
 
 TEST(TicTacToeBoardTest, if_getWinner_checks_vertical_win_X)
@@ -149,5 +149,5 @@ TEST(TicTacToeBoardTest, if_getWinner_checks_game_isnt_over)
 	board.placePiece(2,2);
 	board.placePiece(0,0);
 	board.placePiece(0,2);
-	ASSERT_EQ(board.getWinner(),O);
+	ASSERT_EQ(board.getWinner(),Invalid);
 }
