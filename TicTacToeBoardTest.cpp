@@ -196,3 +196,33 @@ TEST(TicTacToeBoardTest, if_getWinner_checks_game_no_winner)
 	board.placePiece(2,2);
 	ASSERT_EQ(board.getWinner(),Blank);
 }
+
+TEST(TicTacToeBoardTest, if_getWinner_checks_diagonal_win_X)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,0);
+	board.placePiece(1,0);
+	board.placePiece(1,1);
+	board.placePiece(2,0);
+	board.placePiece(2,2);
+	board.placePiece(2,1);
+	board.placePiece(0,1);
+	board.placePiece(0,2);
+	board.placePiece(1,2);
+	ASSERT_EQ(board.getWinner(),X);
+}
+
+TEST(TicTacToeBoardTest, if_getWinner_checks_diagonal_win_X)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,2);
+	board.placePiece(0,0);
+	board.placePiece(1,1);
+	board.placePiece(0,1);
+	board.placePiece(2,0);
+	board.placePiece(1,0);
+	board.placePiece(2,1);
+	board.placePiece(2,2);
+	board.placePiece(1,2);
+	ASSERT_EQ(board.getWinner(),X);
+}

@@ -38,7 +38,7 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  if(legal_turn_count == BOARDSIZE*BOARDSIZE)
+  if(legal_turn_count >= BOARDSIZE*BOARDSIZE)
   	return Blank;
   Piece cur_piece = turn;
   if(row < 0 || row >  (BOARDSIZE-1) || column < 0 || column > (BOARDSIZE-1))
@@ -99,6 +99,31 @@ Piece TicTacToeBoard::getWinner()
   		}
   		if(threeVertical)
   			return pc;  	
+  	    }
+  	    if(i==0 && j==0)
+  	    {
+  	    bool threeDiagonal = true;
+  	    for(int k=i; k < BOARDSIZE-1;k++)
+  	    {
+  	    	int l=k;
+  	    	if(board[k+1][l+1] != pc)
+  	    		threeDiagonal = false;
+  	    }
+  	    if(threeDiagonal)
+  	    	return pc;	
+  	    } 
+  	    if(i==0 && j==2) 
+  	    {
+  	    	bool threeDiagonal = true;
+  	    	int l = i;
+  	    	for(int k=j; j > 0; j--)
+  	    	{
+  	    		if(board[l+1][k-1] != pc)
+  	    			threeDiagonal = false;
+  	    		l += 1;
+  	    	}
+  	    if(threeDiagonal)
+  	    	return pc;
   	    }
   	}
   }
