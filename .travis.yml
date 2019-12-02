@@ -11,7 +11,7 @@ before_install:
   - export GTEST_DIR=$(pwd)
   - cmake ${GTEST_DIR}
   - cd ${CURRENT_PROJ_DIR}
-  - pip install --user cpp-overalls
+  - pip install --user cpp-coveralls
 
 script:
   - make clean
