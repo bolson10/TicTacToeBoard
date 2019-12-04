@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bolson10/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/bolson10/TicTacToeBoard)
+[![Coverage Status](https://coveralls.io/repos/github/bolson10/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/bolson10/TicTacToeBoard?branch=master)
 # TicTacToeBoard
 
 ## Associated Enumerated Types
